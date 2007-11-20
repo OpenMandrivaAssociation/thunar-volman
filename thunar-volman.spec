@@ -2,7 +2,7 @@ Summary:	An archive plugin for the Thunar File Manager
 Name:		thunar-volman
 Version:	0.1.2
 Release:	%mkrel 3
-License:	GPL
+License:	GPLv2+
 Group:		Graphical desktop/Xfce
 URL:		http://xfce4-goodies.berlios.de
 Source0:	%{name}-%{version}.tar.bz2
@@ -11,7 +11,7 @@ Patch1:		%{name}-0.1.2-audio-player.patch
 Requires:	thunar >= 0.2.2
 Requires:	dbus >= 0.34
 Requires:	hal >= 0.5.0
-BuildRequires:	thunar-devel >= 0.2.2
+BuildRequires:	thunar-devel >= 0.8.0
 BuildRequires:	dbus-devel >= 0.34
 BuildRequires:	hal-devel >= 0.5.0
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
@@ -50,7 +50,7 @@ rm -rf %{buildroot}
 
 %files -f %{name}.lang
 %defattr(-,root,root)
-%doc AUTHORS COPYING ChangeLog INSTALL NEWS README THANKS
+%doc AUTHORS ChangeLog NEWS README THANKS
 %{_bindir}/thunar-volman
 %{_iconsdir}/hicolor/*/apps/*.png
 %{_iconsdir}/hicolor/scalable/apps/*.svg
