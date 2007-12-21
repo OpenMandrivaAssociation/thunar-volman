@@ -14,6 +14,7 @@ Requires:	hal >= 0.5.0
 BuildRequires:	thunar-devel >= 0.8.0
 BuildRequires:	dbus-devel >= 0.34
 BuildRequires:	hal-devel >= 0.5.0
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 The Thunar Volume Manager is an extension for the Thunar
