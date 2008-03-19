@@ -1,7 +1,7 @@
 Summary:	An archive plugin for the Thunar File Manager
 Name:		thunar-volman
 Version:	0.2.0
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
 URL:		http://xfce4-goodies.berlios.de
@@ -55,4 +55,3 @@ rm -rf %{buildroot}
 %{_iconsdir}/hicolor/scalable/apps/*.svg
 %{_libdir}/thunar-volman-settings
 %{_datadir}/applications/thunar-volman-settings.desktop
-
