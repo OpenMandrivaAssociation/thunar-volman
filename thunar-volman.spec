@@ -1,4 +1,4 @@
-Summary:	An archive plugin for the Thunar File Manager
+Summary:	A removable volume manager for Thunar
 Name:		thunar-volman
 Version:	0.2.0
 Release:	%mkrel 2
@@ -14,6 +14,7 @@ Requires:	hal >= 0.5.0
 BuildRequires:	thunar-devel >= 0.8.0
 BuildRequires:	dbus-devel >= 0.34
 BuildRequires:	hal-devel >= 0.5.0
+BuildRequires:	libusb-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
