@@ -1,14 +1,14 @@
 Summary:	A removable volume manager for Thunar
 Name:		thunar-volman
 Version:	0.2.0
-Release:	%mkrel 2
+Release:	%mkrel 3
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
-URL:		http://xfce4-goodies.berlios.de
-Source0:	%{name}-%{version}.tar.bz2
-Patch0:		%{name}-0.1.2-detect-dvd.patch
+URL:		http://foo-projects.org/~benny/projects/thunar-volman/index.html
+Source0:	http://download.berlios.de/xfce-goodies/%{name}-%{version}.tar.bz2
 Patch1:		%{name}-0.1.2-audio-player.patch
-Requires:	thunar >= 0.2.2
+Patch2:		%{name}-0.2.0-LUKS-encryption-support.patch
+Requires:	thunar >= 0.8.0
 Requires:	dbus >= 0.34
 Requires:	hal >= 0.5.0
 BuildRequires:	thunar-devel >= 0.8.0
@@ -28,6 +28,7 @@ and import the new pictures from the camera into your photo collection.
 %prep
 %setup -q
 %patch1 -p1
+%patch2 -p1
 
 %build
 %configure2_5x
