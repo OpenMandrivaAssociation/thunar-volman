@@ -7,7 +7,6 @@ Group:		Graphical desktop/Xfce
 URL:		http://foo-projects.org/~benny/projects/thunar-volman/index.html
 Source0:	http://download.berlios.de/xfce-goodies/%{name}-%{version}.tar.bz2
 Patch1:		%{name}-0.1.2-audio-player.patch
-Patch2:		%{name}-0.2.0-LUKS-encryption-support.patch
 Requires:	thunar >= 0.8.0
 Requires:	dbus >= 0.34
 Requires:	hal >= 0.5.0
@@ -28,7 +27,6 @@ and import the new pictures from the camera into your photo collection.
 %prep
 %setup -q
 %patch1 -p1
-%patch2 -p1
 
 %build
 %configure2_5x
