@@ -1,14 +1,13 @@
 Summary:	A removable volume manager for Thunar
 Name:		thunar-volman
-Version:	0.2.0
-Release:	%mkrel 6
+Version:	0.3.80
+Release:	%mkrel 1
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
-URL:		http://foo-projects.org/~benny/projects/thunar-volman/index.html
-Source0:	http://download.berlios.de/xfce-goodies/%{name}-%{version}.tar.bz2
-Patch1:		%{name}-0.1.2-audio-player.patch
-# (tpg) http://bugzilla.xfce.org/show_bug.cgi?id=3349
-Patch2:		%{name}-0.2.0-LUKS-encryption-support.patch
+URL:		http://goodies.xfce.org/projects/thunar-plugins/%{name}
+Source0:	http://goodies.xfce.org/releases/%{name}/%{name}-%{version}.tar.bz2
+# (tpg) mdv exo is already patched to support LUKS
+Patch3:		%{name}-0.3.80-lower-exo-version.patch
 BuildRequires:	thunar-devel >= 0.8.0
 BuildRequires:	dbus-devel >= 0.34
 BuildRequires:	hal-devel >= 0.5.0
@@ -28,11 +27,10 @@ and import the new pictures from the camera into your photo collection.
 
 %prep
 %setup -q
-%patch1 -p1
-%patch2 -p0
+%patch3 -p1
 
 %build
-# (tpg) needed by patch 2
+# (tpg) needed by patch 3
 NOCONFIGURE=1 xdt-autogen
 
 %configure2_5x
