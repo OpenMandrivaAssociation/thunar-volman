@@ -1,11 +1,12 @@
 Summary:	A removable volume manager for Thunar
 Name:		thunar-volman
 Version:	0.3.80
-Release:	%mkrel 2
+Release:	%mkrel 3
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
 URL:		http://goodies.xfce.org/projects/thunar-plugins/%{name}
 Source0:	http://goodies.xfce.org/releases/%{name}/%{name}-%{version}.tar.bz2
+Patch0:		thunar-volman-0.3.80-format_not_a_string_literal_and_no_format_arguments.patch
 BuildRequires:	thunar-devel >= 0.8.0
 BuildRequires:	dbus-devel >= 0.34
 BuildRequires:	hal-devel >= 0.5.0
@@ -25,6 +26,7 @@ and import the new pictures from the camera into your photo collection.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %configure2_5x
