@@ -1,7 +1,7 @@
 Summary:	A removable volume manager for Thunar
 Name:		thunar-volman
 Version:	0.3.80
-Release:	%mkrel 5
+Release:	%mkrel 6
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
 URL:		http://goodies.xfce.org/projects/thunar-plugins/%{name}
@@ -35,6 +35,13 @@ and import the new pictures from the camera into your photo collection.
 %install
 rm -rf %{buildroot}
 %makeinstall_std
+
+# add onlyshowin=xfce in the .desktop file:
+desktop-file-install --vendor="" \
+		--remove-key="Encoding" \
+		--add-only-show-in="XFCE" \
+		--dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/thunar-volman-settings.desktop
+
 
 %find_lang %{name}
 
