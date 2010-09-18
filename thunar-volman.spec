@@ -1,17 +1,23 @@
+%define url_ver %(echo %{version} | cut -c 1-3)
+
 Summary:	A removable volume manager for Thunar
 Name:		thunar-volman
-Version:	0.3.80
-Release:	%mkrel 6
+Version:	0.5.1
+Release:	%mkrel 1
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
 URL:		http://goodies.xfce.org/projects/thunar-plugins/%{name}
-Source0:	http://goodies.xfce.org/releases/%{name}/%{name}-%{version}.tar.bz2
-Patch0:		thunar-volman-0.3.80-format_not_a_string_literal_and_no_format_arguments.patch
-BuildRequires:	thunar-devel >= 0.8.0
+Source0:	http://archive.xfce.org/src/apps/%{name}/%{url_ver}/%{name}-%{version}.tar.bz2
+BuildRequires:	thunar-devel >= 1.1.2
 BuildRequires:	dbus-devel >= 0.34
 BuildRequires:	hal-devel >= 0.5.0
 BuildRequires:	libusb-devel
-Requires:	thunar >= 0.8.0
+BuildRequires:	libgudev-devel
+BuildRequires:	exo-devel >= 0.5.4
+BuildRequires:	libxfce4-util-devel >= 4.7.0
+BuildRequires:	xfconf-devel >= 4.7.0
+BuildRequires:	libnotify-devel >= 0.4.0
+Requires:	thunar >= 1.1.2
 Requires:	dbus >= 0.34
 Requires:	hal >= 0.5.0
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
@@ -26,10 +32,11 @@ and import the new pictures from the camera into your photo collection.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
-%configure2_5x
+%configure2_5x \
+	--enable-notifications
+
 %make
 
 %install
@@ -62,7 +69,7 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %doc AUTHORS ChangeLog NEWS README THANKS
 %{_bindir}/thunar-volman
+%{_bindir}/thunar-volman-settings
 %{_iconsdir}/hicolor/*/apps/*.png
 %{_iconsdir}/hicolor/scalable/apps/*.svg
-%{_libdir}/thunar-volman-settings
 %{_datadir}/applications/thunar-volman-settings.desktop
