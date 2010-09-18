@@ -15,6 +15,7 @@ BuildRequires:	libusb-devel
 BuildRequires:	libgudev-devel
 BuildRequires:	exo-devel >= 0.5.4
 BuildRequires:	libxfce4util-devel >= 4.7.0
+BuildRequires:	libxfce4ui-devel >= 4.7.0
 BuildRequires:	xfconf-devel >= 4.7.0
 BuildRequires:	libnotify-devel >= 0.4.0
 Requires:	thunar >= 1.1.2
