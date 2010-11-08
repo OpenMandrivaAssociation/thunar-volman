@@ -3,14 +3,13 @@
 Summary:	A removable volume manager for Thunar
 Name:		thunar-volman
 Version:	0.5.2
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
 URL:		http://goodies.xfce.org/projects/thunar-plugins/%{name}
 Source0:	http://archive.xfce.org/src/apps/%{name}/%{url_ver}/%{name}-%{version}.tar.bz2
 BuildRequires:	thunar-devel >= 1.1.2
 BuildRequires:	dbus-devel >= 0.34
-BuildRequires:	hal-devel >= 0.5.0
 BuildRequires:	libusb-devel
 BuildRequires:	libgudev-devel
 BuildRequires:	exo-devel >= 0.5.4
@@ -20,7 +19,7 @@ BuildRequires:	xfconf-devel >= 4.7.0
 BuildRequires:	libnotify-devel >= 0.4.0
 Requires:	thunar >= 1.1.2
 Requires:	dbus >= 0.34
-Requires:	hal >= 0.5.0
+Requires:	gvfs
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
