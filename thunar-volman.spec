@@ -11,7 +11,7 @@ Source0:	http://archive.xfce.org/src/apps/%{name}/%{url_ver}/%{name}-%{version}.
 BuildRequires:	thunar-devel >= 1.1.2
 BuildRequires:	dbus-devel >= 0.34
 BuildRequires:	libusb-devel
-BuildRequires:	libgudev-devel
+BuildRequires:	pkgconfig(gudev-1.0)
 BuildRequires:	exo-devel >= 0.5.4
 BuildRequires:	libxfce4util-devel >= 4.7.0
 BuildRequires:	libxfce4ui-devel >= 4.7.0
