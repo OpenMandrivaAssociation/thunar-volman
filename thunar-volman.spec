@@ -2,8 +2,8 @@
 
 Summary:	A removable volume manager for Thunar
 Name:		thunar-volman
-Version:	0.6.0
-Release:	%mkrel 3
+Version:	0.6.1
+Release:	%mkrel 1
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
 URL:		http://goodies.xfce.org/projects/thunar-plugins/%{name}
