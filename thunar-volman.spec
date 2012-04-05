@@ -8,16 +8,16 @@ License:	GPLv2+
 Group:		Graphical desktop/Xfce
 URL:		http://goodies.xfce.org/projects/thunar-plugins/%{name}
 Source0:	http://archive.xfce.org/src/apps/%{name}/%{url_ver}/%{name}-%{version}.tar.bz2
-BuildRequires:	thunar-devel >= 1.1.2
+BuildRequires:	thunar-devel >= 1.3.1
 BuildRequires:	dbus-devel >= 0.34
 BuildRequires:	libusb-devel
 BuildRequires:	pkgconfig(gudev-1.0)
-BuildRequires:	exo-devel >= 0.5.4
-BuildRequires:	libxfce4util-devel >= 4.7.0
-BuildRequires:	libxfce4ui-devel >= 4.7.0
+BuildRequires:	exo-devel >= 0.7.2
+BuildRequires:	libxfce4util-devel >= 4.9.0
+BuildRequires:	libxfce4ui-devel >= 4.9.1
 BuildRequires:	xfconf-devel >= 4.7.0
 BuildRequires:	libnotify-devel >= 0.4.0
-Requires:	thunar >= 1.1.2
+Requires:	thunar >= 1.3.1
 Requires:	dbus >= 0.34
 Requires:	gvfs
 Obsoletes:	xfce4-volstatus-icon <= 0.1.0
@@ -41,7 +41,6 @@ and import the new pictures from the camera into your photo collection.
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
 # add onlyshowin=xfce in the .desktop file:
@@ -51,23 +50,9 @@ desktop-file-install --vendor="" \
 		--dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/thunar-volman-settings.desktop
 
 
-%find_lang %{name}
-
-%if %mdkversion < 200900
-%post
-%update_icon_cache hicolor
-%endif
-
-%if %mdkversion < 200900
-%postun
-%clean_icon_cache hicolor
-%endif
-
-%clean
-rm -rf %{buildroot}
+%find_lang %{name} %{name}.lang
 
 %files -f %{name}.lang
-%defattr(-,root,root)
 %doc AUTHORS ChangeLog NEWS README THANKS
 %{_bindir}/thunar-volman
 %{_bindir}/thunar-volman-settings
