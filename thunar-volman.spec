@@ -42,13 +42,6 @@ and import the new pictures from the camera into your photo collection.
 %install
 %makeinstall_std
 
-# add onlyshowin=xfce in the .desktop file:
-desktop-file-install --vendor="" \
-		--remove-key="Encoding" \
-		--add-only-show-in="XFCE" \
-		--dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/thunar-volman-settings.desktop
-
-
 %find_lang %{name} %{name}.lang
 
 %files -f %{name}.lang
