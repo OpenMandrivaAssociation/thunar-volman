@@ -8,6 +8,7 @@ License:	GPLv2+
 Group:		Graphical desktop/Xfce
 URL:		http://goodies.xfce.org/projects/thunar-plugins/%{name}
 Source0:	http://archive.xfce.org/src/apps/%{name}/%{url_ver}/%{name}-%{version}.tar.bz2
+Patch0:		0001-Fix-return-with-no-value-in-function-returning-non-v.patch
 BuildRequires:	pkgconfig(thunarx-2)
 BuildRequires:	pkgconfig(dbus-1)
 BuildRequires:	pkgconfig(libusb-1.0)
@@ -41,6 +42,7 @@ and import the new pictures from the camera into your photo collection.
 
 %prep
 %setup -q
+%apply_patches
 
 %build
 %configure \
