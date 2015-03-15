@@ -2,18 +2,19 @@
 
 Summary:	A removable volume manager for Thunar
 Name:		thunar-volman
-Version:	0.8.0
-Release:	6
+Version:	0.8.1
+Release:	0.1
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
 URL:		http://goodies.xfce.org/projects/thunar-plugins/%{name}
 Source0:	http://archive.xfce.org/src/apps/%{name}/%{url_ver}/%{name}-%{version}.tar.bz2
+Patch0:		0001-Fix-return-with-no-value-in-function-returning-non-v.patch
 BuildRequires:	pkgconfig(thunarx-2)
 BuildRequires:	pkgconfig(dbus-1)
 BuildRequires:	pkgconfig(libusb-1.0)
 BuildRequires:	pkgconfig(gudev-1.0)
 BuildRequires:	pkgconfig(exo-1)
-BuildRequires:	pkgconfig(libxfce4util-1.0) >= 4.11
+BuildRequires:	pkgconfig(libxfce4util-1.0) >= 4.12
 BuildRequires:	pkgconfig(libxfce4ui-1)
 BuildRequires:	pkgconfig(libxfconf-0)
 BuildRequires:	pkgconfig(libnotify)
@@ -41,6 +42,7 @@ and import the new pictures from the camera into your photo collection.
 
 %prep
 %setup -q
+%apply_patches
 
 %build
 %configure2_5x \
