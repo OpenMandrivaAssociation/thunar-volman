@@ -14,15 +14,14 @@ BuildRequires:	pkgconfig(thunarx-3)
 BuildRequires:	pkgconfig(dbus-1)
 BuildRequires:	pkgconfig(libusb-1.0)
 BuildRequires:	pkgconfig(gudev-1.0)
-BuildRequires:	pkgconfig(exo-1)
+BuildRequires:	pkgconfig(exo-2)
 BuildRequires:	pkgconfig(libxfce4util-1.0) >= 4.12
-BuildRequires:	pkgconfig(libxfce4ui-1)
+BuildRequires:	pkgconfig(libxfce4ui-2)
 BuildRequires:	pkgconfig(libxfconf-0)
 BuildRequires:	pkgconfig(libnotify)
 Requires:	thunar >= 1.3.1
 Requires:	dbus >= 0.34
 Requires:	gvfs
-%if %mdvver >= 201300
 Suggests:	gvfs-archive
 Suggests:	gvfs-fuse
 Suggests:	gvfs-gphoto2
@@ -30,7 +29,6 @@ Suggests:	gvfs-iphone
 Suggests:	gvfs-obexftp
 Suggests:	gvfs-smb
 Suggests:	gvfs-mtp
-%endif
 Obsoletes:	xfce4-volstatus-icon <= 0.1.0
 
 %description
