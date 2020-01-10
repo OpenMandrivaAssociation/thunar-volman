@@ -41,7 +41,7 @@ and import the new pictures from the camera into your photo collection.
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 
 %build
 %configure \
