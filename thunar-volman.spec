@@ -3,13 +3,13 @@
 
 Summary:	A removable volume manager for Thunar
 Name:		thunar-volman
-Version:	0.9.5
+Version:	4.16.0
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
 URL:		http://goodies.xfce.org/projects/thunar-plugins/%{name}
 Source0:	http://archive.xfce.org/src/apps/%{name}/%{url_ver}/%{name}-%{version}.tar.bz2
-#Patch1:		thunar-volman-0.9.0-xfce4ui4.12.patch
+
 BuildRequires:	pkgconfig(thunarx-3)
 BuildRequires:	pkgconfig(dbus-1)
 BuildRequires:	pkgconfig(libusb-1.0)
@@ -19,6 +19,12 @@ BuildRequires:	pkgconfig(libxfce4util-1.0) >= 4.12
 BuildRequires:	pkgconfig(libxfce4ui-2)
 BuildRequires:	pkgconfig(libxfconf-0)
 BuildRequires:	pkgconfig(libnotify)
+BuildRequires:	pkgconfig(gio-2.0)
+BuildRequires:	pkgconfig(glib-2.0)
+BuildRequires:	pkgconfig(gthread-2.0)
+BuildRequires:	pkgconfig(gtk+-3.0)
+BuildRequires:	pkgconfig(gudev-1.0)
+
 Requires:	thunar >= 1.3.1
 Requires:	dbus >= 0.34
 Requires:	gvfs
@@ -55,7 +61,7 @@ and import the new pictures from the camera into your photo collection.
 %find_lang %{name} %{name}.lang
 
 %files -f %{name}.lang
-%doc AUTHORS ChangeLog NEWS README THANKS
+%doc AUTHORS ChangeLog NEWS README* THANKS
 %{_bindir}/thunar-volman
 %{_bindir}/thunar-volman-settings
 %{_iconsdir}/hicolor/*/apps/*.png
