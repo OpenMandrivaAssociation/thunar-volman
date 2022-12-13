@@ -3,7 +3,7 @@
 
 Summary:	A removable volume manager for Thunar
 Name:		thunar-volman
-Version:	4.16.0
+Version:	4.17.1
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
