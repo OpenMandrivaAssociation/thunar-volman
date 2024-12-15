@@ -3,19 +3,19 @@
 
 Summary:	A removable volume manager for Thunar
 Name:		thunar-volman
-Version:	4.18.0
+Version:	4.20.0
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
 URL:		https://goodies.xfce.org/projects/thunar-plugins/%{name}
-Source0:	http://archive.xfce.org/src/apps/%{name}/%{url_ver}/%{name}-%{version}.tar.bz2
+Source0:	https://archive.xfce.org/src/apps/%{name}/%{url_ver}/%{name}-%{version}.tar.bz2
 
 BuildRequires:	pkgconfig(thunarx-3)
 BuildRequires:	pkgconfig(dbus-1)
 BuildRequires:	pkgconfig(libusb-1.0)
 BuildRequires:	pkgconfig(gudev-1.0)
 BuildRequires:	pkgconfig(exo-2)
-BuildRequires:	pkgconfig(libxfce4util-1.0) >= 4.12
+BuildRequires:	pkgconfig(libxfce4util-1.0) >= 4.20.0
 BuildRequires:	pkgconfig(libxfce4ui-2)
 BuildRequires:	pkgconfig(libxfconf-0)
 BuildRequires:	pkgconfig(libnotify)
@@ -46,17 +46,16 @@ it will automatically launch your preferred photo application
 and import the new pictures from the camera into your photo collection.
 
 %prep
-%setup -q
-%autopatch -p1
+%autosetup -p1
 
 %build
 %configure \
 	--enable-notifications
 
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %find_lang %{name} %{name}.lang
 
@@ -67,4 +66,3 @@ and import the new pictures from the camera into your photo collection.
 %{_iconsdir}/hicolor/*/apps/*.png
 %{_iconsdir}/hicolor/scalable/apps/*.svg
 %{_datadir}/applications/thunar-volman-settings.desktop
-
