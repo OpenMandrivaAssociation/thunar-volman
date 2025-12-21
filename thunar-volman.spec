@@ -10,6 +10,11 @@ Group:		Graphical desktop/Xfce
 URL:		https://goodies.xfce.org/projects/thunar-plugins/%{name}
 Source0:	https://archive.xfce.org/src/apps/%{name}/%{url_ver}/%{name}-%{version}.tar.bz2
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(thunarx-3)
 BuildRequires:	pkgconfig(dbus-1)
 BuildRequires:	pkgconfig(libusb-1.0)
